@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jewellery shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+    background-color:#3a4664;
+    color: #eaa0a2; /* Reddish text color */
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Regular styles for the anchor tag */
+a {
+    color: #f4f4f4; /* Default text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition for a smooth color change */
+}
+
+/* Hover styles for the anchor tag */
+a:hover {
+    color: red; /* Change text color on hover */
+}
+
+
+nav {
+    background-color:#9fb6c3; /* Yellowish background */
+    color: #9fb6c3; /* Reddish text color */
+    padding: 10px;
+    text-align: center;
+    
+}
+
+
+    section {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      justify-content: space-around;
+      border: 2px solid black;
+      margin: 15px;
+      padding: 20px;
+      /* width: 300px; */
+      text-align: center;
+      transition: transform 0.3s;
+      display: block;
+    }
+
+    footer {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-img {
+      max-width: 296px;
+      height: auto;
+    }
+
+    .buy-now-btn {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .buy-now-btn:hover {
+      background-color: #45a049;
+    }
+
+    #confirmation-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #confirmation-modal p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Jewellery shop</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a> | <a href="../html/contactus.html">Contact Us</a> | <a href="../html/aboutus.html"> about-us</a>
+  </nav>
+
+  <section>
+    <!-- Dummy Product Entries -->
+    <div class="product-card">
+      <img class="product-img" src="../images/image6.jpg" alt="Product 1">
+      <h3>Product 1</h3>
+      <p>$19.99</p>
+      <button class="buy-now-btn" onclick="showConfirmation('Product 1')">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img class="product-img" src="../images/image2.jpg" alt="Product 2">
+      <h3>Product 2</h3>
+      <p>$29.99</p>
+      <button class="buy-now-btn" onclick="showConfirmation('Product 2')">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img class="product-img" src="../images/image.jpg" alt="Product 3">
+      <h3>Product 3</h3>
+      <p>$39.99</p>
+      <button class="buy-now-btn" onclick="showConfirmation('Product 3')">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img class="product-img" src="../images/image4.jpg" alt="Product 4">
+      <h3>Product 4</h3>
+      <p>$49.99</p>
+      <button class="buy-now-btn" onclick="showConfirmation('Product 4')">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img class="product-img" src="../images/image5.jpg" alt="Product 5">
+      <h3>Product 5</h3>
+      <p>$59.99</p>
+      <button class="buy-now-btn" onclick="showConfirmation('Product 5')">Buy Now</button>
+    </div>
+  </section>
+
+  <div id="confirmation-modal">
+    <p>Thank you for your purchase!</p>
+    <button onclick="hideConfirmation()">Close</button>
+  </div>
+
+  <script>
+    function showConfirmation(productName) {
+      document.getElementById('confirmation-modal').style.display = 'block';
+      alert(`You have purchased ${productName}`);
+    }
+
+    function hideConfirmation() {
+      document.getElementById('confirmation-modal').style.display = 'none';
+    }
+  </script>
+  <b>
+    <footer style="text-align: center;">
+      <p>&copysr; 2023 Jewelers. All rights reserved.</p>
+  </b>
+  </footer>
+</body>
+
+</html>
